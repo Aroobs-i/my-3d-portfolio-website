@@ -22,15 +22,15 @@ const About = () => {
             </div>
             <div className="col-span-1 xl:row-span-3">
                 <div className="grid-container">
-                    <img src="/assets/grid2_2.jpg" alt="grid-2"
-                       className="w-full sm:w-[276px] h-fit object-contain" 
+                    <img src="/assets/grid28.png" alt="grid-2"
+                       className="w-full sm:w-[276px] h-fit object-contain rounded-3xl" 
                     />
                     <div>
                         <p className="grid-headtext">
                             Tech Stack
                         </p>
                         <p className="grid-subtext">
-                            I specialize in JS/TS with a focus on React and Next.js ecosystems.
+                            I specialize in Javascript/Typescript with a focus on React and Next.js ecosystems.
                         </p>
                     </div>
                 </div>
