@@ -22,7 +22,7 @@ const About = () => {
             </div>
             <div className="col-span-1 xl:row-span-3">
                 <div className="grid-container">
-                    <img src="/assets/grid2.png" alt="grid-2"
+                    <img src="/assets/grid2_2.jpg" alt="grid-2"
                        className="w-full sm:w-[276px] h-fit object-contain" 
                     />
                     <div>

@@ -10,6 +10,7 @@ import ReactLogo from "../components/ReactLogo"
 import Cube from "../components/Cube"
 import Rings from "../components/Rings"
 import Button from "../components/Button"
+import HeroCamera from "../components/HeroCamera"
 
 const Hero = () => {
     
