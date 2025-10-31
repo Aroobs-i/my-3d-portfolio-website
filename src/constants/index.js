@@ -56,7 +56,7 @@ export const navLinks = [
         {
           id: 4,
           name: 'Gsap',
-          path: '/assets/Gsap.png',
+          path: '/assets/gsap.png',
         },
       ],
     },
@@ -78,7 +78,7 @@ export const navLinks = [
         {
           id: 1,
           name: 'Next.js',
-          path: '/assets/Nextjs.svg',
+          path: '/assets/nextjs.png',
         },
         {
           id: 2,
@@ -89,6 +89,11 @@ export const navLinks = [
           id: 3,
           name: 'TypeScript',
           path: '/assets/typescript.png',
+        },
+        {
+          id: 4,
+          name: 'Appwrite',
+          path: '/assets/appwrite.png',
         },
       ],
     },
@@ -112,7 +117,7 @@ export const navLinks = [
         {
           id: 1,
           name: 'Next.js',
-          path: '/assets/nextjs.svg',
+          path: '/assets/nextjs.png',
         },
         {
           id: 2,
@@ -123,6 +128,11 @@ export const navLinks = [
           id: 3,
           name: 'TypeScript',
           path: '/assets/typescript.png',
+        },
+        {
+          id: 4,
+          name: 'Mongodb',
+          path: '/assets/mongodb.png',
         },
       ],
     },
@@ -144,7 +154,7 @@ export const navLinks = [
         {
           id: 1,
           name: 'Next.js',
-          path: '/assets/react.svg',
+          path: '/assets/nextjs.png',
         },
         {
           id: 2,
