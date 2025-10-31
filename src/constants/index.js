@@ -24,17 +24,17 @@ export const navLinks = [
   
   export const myProjects = [
     {
-      title: 'Podcastr - AI Podcast Platform',
-      desc: 'Podcastr is a revolutionary Software-as-a-Service platform that transforms the way podcasts are created. With advanced AI-powered features like text-to-multiple-voices functionality, it allows creators to generate diverse voiceovers from a single text input.',
+      title: 'Apple - Macbook Landing Page',
+      desc: 'Experience the perfect blend of power and elegance with the new MacBook — designed for those who create, innovate, and push boundaries every day.',
       subdesc:
-        'Built as a unique Software-as-a-Service app with Next.js 14, Tailwind CSS, TypeScript, Framer Motion and Convex, Podcastr is designed for optimal performance and scalability.',
-      href: 'https://www.youtube.com/watch?v=zfAb95tJvZQ',
+        "Built with cutting-edge performance, stunning Retina display, and all-day battery life — the MacBook elevates your workflow, whether you're coding, designing, or streaming your next big idea.",
+      href: 'https://macbook-pro-plum.vercel.app/',
       texture: '/textures/project/project1.mp4',
-      logo: '/assets/project-logo1.png',
+      logo: '/assets/project-logo1.svg',
       logoStyle: {
-        backgroundColor: '#2A1816',
-        border: '0.2px solid #36201D',
-        boxShadow: '0px 0px 60px 0px #AA3C304D',
+        backgroundColor: '#000000',
+        border: '0.2px solid #A2AAAD',
+        boxShadow: '0px 0px 60px 0px ##FFFFFF', 
       },
       spotlight: '/assets/spotlight1.png',
       tags: [
@@ -50,35 +50,35 @@ export const navLinks = [
         },
         {
           id: 3,
-          name: 'TypeScript',
-          path: '/assets/typescript.png',
+          name: 'Three.js',
+          path: '/assets/threejs.png',
         },
         {
           id: 4,
-          name: 'Framer Motion',
-          path: '/assets/framer.png',
+          name: 'Gsap',
+          path: '/assets/Gsap.png',
         },
       ],
     },
     {
-      title: 'LiveDoc - Real-Time Google Docs Clone',
-      desc: 'LiveDoc is a powerful collaborative app that elevates the capabilities of real-time document editing. As an enhanced version of Google Docs, It supports millions of collaborators simultaneously, ensuring that every change is captured instantly and accurately.',
+      title: 'StoreIt - A Google Drive Clone',
+      desc: 'StoreIt is a cloud-based file storage and management platform inspired by Google Drive. It allows users to securely upload, organize, preview, and share files from anywhere with a simple, intuitive interface.',
       subdesc:
-        'With LiveDoc, users can experience the future of collaboration, where multiple contributors work together in real time without any lag, by using Next.js and Liveblocks newest features.',
-      href: 'https://www.youtube.com/watch?v=y5vE8y_f_OM',
+        'Fast, secure, and organized cloud storage — built for everyone, built with Next.js, Tailwindcss, Typescript, and appwrite database',
+      href: 'https://storelista.vercel.app/',
       texture: '/textures/project/project2.mp4',
-      logo: '/assets/project-logo2.png',
+      logo: '/assets/project-logo2.svg',
       logoStyle: {
-        backgroundColor: '#13202F',
-        border: '0.2px solid #17293E',
-        boxShadow: '0px 0px 60px 0px #2F6DB54D',
+        backgroundColor: '#000000',
+        border: '0.2px solid #FA7275',
+        boxShadow: '0px 0px 60px 0px #36201D',
       },
       spotlight: '/assets/spotlight2.png',
       tags: [
         {
           id: 1,
-          name: 'React.js',
-          path: '/assets/react.svg',
+          name: 'Next.js',
+          path: '/assets/Nextjs.svg',
         },
         {
           id: 2,
@@ -90,23 +90,18 @@ export const navLinks = [
           name: 'TypeScript',
           path: '/assets/typescript.png',
         },
-        {
-          id: 4,
-          name: 'Framer Motion',
-          path: '/assets/framer.png',
-        },
       ],
     },
     {
-      title: 'CarePulse - Health Management System',
-      desc: 'An innovative healthcare platform designed to streamline essential medical processes. It simplifies patient registration, appointment scheduling, and medical record management, providing a seamless experience for both healthcare providers and patients.',
+      title: 'Signalist - Stock market app',
+      desc: 'Trade smarter in the stock market with real-time data, advanced charting, alerts. Learn, trade, and grow your portfolio with confidence.',
       subdesc:
-        'With a focus on efficiency, CarePulse integrantes complex forms and SMS notifications, by using Next.js, Appwrite, Twillio and Sentry that enhance operational workflows.',
-      href: 'https://www.youtube.com/watch?v=lEflo_sc82g',
+        'Charts · News · Signals · Secure trading',
+      href: 'https://signalist-stocks.vercel.app/',
       texture: '/textures/project/project3.mp4',
-      logo: '/assets/project-logo3.png',
+      logo: '/assets/project-logo3.svg',
       logoStyle: {
-        backgroundColor: '#60f5a1',
+        backgroundColor: '#000000', //#60f5a1
         background:
           'linear-gradient(0deg, #60F5A150, #60F5A150), linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(208, 213, 221, 0.8) 100%)',
         border: '0.2px solid rgba(208, 213, 221, 1)',
@@ -116,8 +111,8 @@ export const navLinks = [
       tags: [
         {
           id: 1,
-          name: 'React.js',
-          path: '/assets/react.svg',
+          name: 'Next.js',
+          path: '/assets/nextjs.svg',
         },
         {
           id: 2,
@@ -129,21 +124,16 @@ export const navLinks = [
           name: 'TypeScript',
           path: '/assets/typescript.png',
         },
-        {
-          id: 4,
-          name: 'Framer Motion',
-          path: '/assets/framer.png',
-        },
       ],
     },
     {
-      title: 'Horizon - Online Banking Platform',
-      desc: 'Horizon is a comprehensive online banking platform that offers users a centralized finance management dashboard. It allows users to connect multiple bank accounts, monitor real-time transactions, and seamlessly transfer money to other users.',
+      title: 'Converso - AI-powered Learning management system',
+      desc: 'AI-driven learning platform for smarter, faster growth. Next-gen LMS with intelligent automation & personalized learning. Revolutionizing education with AI-powered learning journeys, Learn smarter, train faster — AI at every step',
       subdesc:
-        'Built with Next.js 14 Appwrite, Dwolla and Plaid, Horizon ensures a smooth and secure banking experience, tailored to meet the needs of modern consumers.',
-      href: 'https://www.youtube.com/watch?v=PuOVqP_cjkE',
+        'Built with Next.js, supabase, typescript, tailwindcss, Converso ensures you get ahead in knowledge.',
+      href: 'https://converso-lms-brown.vercel.app/',
       texture: '/textures/project/project4.mp4',
-      logo: '/assets/project-logo4.png',
+      logo: '/assets/project-logo4.svg',
       logoStyle: {
         backgroundColor: '#0E1F38',
         border: '0.2px solid #0E2D58',
@@ -153,7 +143,7 @@ export const navLinks = [
       tags: [
         {
           id: 1,
-          name: 'React.js',
+          name: 'Next.js',
           path: '/assets/react.svg',
         },
         {
@@ -168,19 +158,19 @@ export const navLinks = [
         },
         {
           id: 4,
-          name: 'Framer Motion',
-          path: '/assets/framer.png',
+          name: 'Supabase',
+          path: '/assets/supabase.png',
         },
       ],
     },
     {
-      title: 'Imaginify - AI Photo Manipulation App',
-      desc: 'Imaginify is a groundbreaking Software-as-a-Service application that empowers users to create stunning photo manipulations using AI technology. With features like AI-driven image editing, a payments system, and a credits-based model.',
+      title: 'Awwwards winning - website clone',
+      desc: 'A sleek, award-winning website clone inspired by Awwwards-level design standards.The project simulates a modern game landing page with dynamic motion, parallax effects, and playful interactions to deliver a high-end digital experience, all powered by GSAP.',
       subdesc:
-        'Built with Next.js 14, Cloudinary AI, Clerk, and Stripe, Imaginify combines cutting-edge technology with a user-centric approach. It can be turned into a side income or even a full-fledged business.',
-      href: 'https://www.youtube.com/watch?v=Ahwoks_dawU',
+        'Built with React, tailwindcss, and Gsap, A next-gen interactive showcase inspired by Awwwards.',
+      href: 'https://awwards-one-woad.vercel.app/',
       texture: '/textures/project/project5.mp4',
-      logo: '/assets/project-logo5.png',
+      logo: '/assets/project-logo5.webp',
       logoStyle: {
         backgroundColor: '#1C1A43',
         border: '0.2px solid #252262',
@@ -200,13 +190,8 @@ export const navLinks = [
         },
         {
           id: 3,
-          name: 'TypeScript',
-          path: '/assets/typescript.png',
-        },
-        {
-          id: 4,
-          name: 'Framer Motion',
-          path: '/assets/framer.png',
+          name: 'Gsap',
+          path: '/assets/gsap.png',
         },
       ],
     },
