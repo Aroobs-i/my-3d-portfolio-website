@@ -8,9 +8,9 @@ const About = () => {
             <div className="col-span-1 xl:row-span-3">
                 <div className="grid-container">
                     <img 
-                    src="/assets/grid1.png" 
+                    src="/assets/grid11.png" 
                     alt="grid"
-                    className="w-full sm:h-[276px] h-fit object-contain" 
+                    className="w-full sm:h-[276px] h-fit object-contain rounded-3xl" 
                     />
                     <div>
                         <p className="grid-headtext">Hi, I'm Arooba</p>
@@ -23,7 +23,7 @@ const About = () => {
             <div className="col-span-1 xl:row-span-3">
                 <div className="grid-container">
                     <img src="/assets/grid28.png" alt="grid-2"
-                       className="w-full sm:w-[276px] h-fit object-contain rounded-3xl" 
+                       className="w-full sm:w-[276px] h-fit object-contain rounded-3xl mx-11" 
                     />
                     <div>
                         <p className="grid-headtext">
