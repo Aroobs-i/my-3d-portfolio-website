@@ -12,7 +12,7 @@ export const navLinks = [
     },
     {
       id: 3,
-      name: 'My Work',
+      name: 'Projects',
       href: '#projects',
     },
     {
@@ -210,6 +210,40 @@ export const navLinks = [
       ],
     },
   ];
+
+export const certificates = [
+  {
+    title: "React",
+    file: "/certificates/react.pdf",
+    img: "/certificates/react.png"
+  },
+  {
+    title: "Full Stack Js Developer",
+    file: "/certificates/fullstack-js-dev.pdf",
+    img: "/certificates/fullstack-js-dev.png"
+  },
+  {
+    title: "Frontend",
+    file: "/certificates/frontend.pdf",
+    img: "/certificates/frontend.png"
+  },
+  {
+    title: "Node - Mongo",
+    file: "/certificates/node-mongo.pdf",
+    img: "/certificates/node-mongo.png"
+  },
+  {
+    title: "DevOps - Agile",
+    file: "/certificates/devOps-agile.pdf",
+    img: "/certificates/devops-agile.png"
+  },
+  {
+    title: "Git - Github",
+    file: "/certificates/git.pdf",
+    img: "/certificates/git.png"
+  },
+];
+
   
   export const calculateSizes = (isSmall, isMobile, isTablet) => {
     return {
