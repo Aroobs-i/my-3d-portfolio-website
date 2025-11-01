@@ -20,6 +20,7 @@
     "react-dom": "^19.1.1",
     "react-globe.gl": "^2.36.0",
     "react-responsive": "^10.0.1",
+    "tailwindcss-animate": "^1.0.7",
     "three": "^0.180.0"
   },
   "devDependencies": {
