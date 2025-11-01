@@ -12,11 +12,16 @@ export const navLinks = [
     },
     {
       id: 3,
+      name: 'My Work',
+      href: '#projects',
+    },
+    {
+      id: 4,
       name: 'Certifications',
       href: '#certificates',
     },
     {
-      id: 4,
+      id: 5,
       name: 'Contact',
       href: '#contact',
     },
@@ -27,7 +32,7 @@ export const navLinks = [
       title: 'Apple - Macbook Landing Page',
       desc: 'Experience the perfect blend of power and elegance with the new MacBook — designed for those who create, innovate, and push boundaries every day.',
       subdesc:
-        "Built with cutting-edge performance, stunning Retina display, and all-day battery life — the MacBook elevates your workflow, whether you're coding, designing, or streaming your next big idea.",
+        "A stunning, interactive website with scroll-triggered animations, Built with React, Three.js, Tailwindcss, and Gsap.",
       href: 'https://macbook-pro-plum.vercel.app/',
       texture: '/textures/project/project1.mp4',
       logo: '/assets/project-logo1.svg',
@@ -101,14 +106,13 @@ export const navLinks = [
       title: 'Signalist - Stock market app',
       desc: 'Trade smarter in the stock market with real-time data, advanced charting, alerts. Learn, trade, and grow your portfolio with confidence.',
       subdesc:
-        'Charts · News · Signals · Secure trading',
+        'Charts · News · Signals · Secure trading. Built with Next.js, Tailwindcss, Typescript, and Mongodb database.',
       href: 'https://signalist-stocks.vercel.app/',
       texture: '/textures/project/project3.mp4',
       logo: '/assets/project-logo3.svg',
       logoStyle: {
         backgroundColor: '#000000', //#60f5a1
-        background:
-          'linear-gradient(0deg, #60F5A150, #60F5A150), linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(208, 213, 221, 0.8) 100%)',
+        background: 'linear-gradient(0deg, rgba(0, 20, 15, 0.9), rgba(0, 20, 15, 0.9)),linear-gradient(180deg, rgba(0, 40, 30, 0.85) 0%, rgba(0, 10, 8, 0.9) 100%)',
         border: '0.2px solid rgba(208, 213, 221, 1)',
         boxShadow: '0px 0px 60px 0px rgba(35, 131, 96, 0.3)',
       },
@@ -140,7 +144,7 @@ export const navLinks = [
       title: 'Converso - AI-powered Learning management system',
       desc: 'AI-driven learning platform for smarter, faster growth. Next-gen LMS with intelligent automation & personalized learning. Revolutionizing education with AI-powered learning journeys, Learn smarter, train faster — AI at every step',
       subdesc:
-        'Built with Next.js, supabase, typescript, tailwindcss, Converso ensures you get ahead in knowledge.',
+        'Built with Next.js, Supabase, Typescript, Tailwindcss, Converso ensures you get ahead with knowledge.',
       href: 'https://converso-lms-brown.vercel.app/',
       texture: '/textures/project/project4.mp4',
       logo: '/assets/project-logo4.svg',
