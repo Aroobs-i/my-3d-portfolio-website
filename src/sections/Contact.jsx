@@ -8,6 +8,9 @@ import Telephone from "../components/Telephone";
 
 const Contact = () => {
     const formRef = useRef();
+    const [isTyping, setIsTyping] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
+
     const [loading, setLoading] = useState(false);
     const [form, setForm] = useState({
         name: '',
@@ -17,6 +20,10 @@ const Contact = () => {
 
     const handleChange = ({ target: { name,value } }) => {  
         setForm({...form, [name]: value});
+
+        setIsTyping(true);
+        clearTimeout(window.typingTimer);
+        window.typingTimer = setTimeout(() => setIsTyping(false), 400);
     }
 
     const handleSubmit = async (e) => {
@@ -43,6 +50,10 @@ const Contact = () => {
                 email: '',
                 message: ''
             });
+
+            setIsSubmitted(true);
+           setTimeout(() => setIsSubmitted(false), 1200);
+
         } catch (error) {
             setLoading(false);
             console.log(error);
@@ -110,7 +121,7 @@ const Contact = () => {
             <Center> 
             <Suspense fallback={<CanvasLoader />}>
                   <group scale={180} position={[0, -2, 0]} rotation={[0, -0.1, 0]}>
-                    <Telephone />
+                    <Telephone isTyping={isTyping} isSubmitted={isSubmitted} />
                   </group>
             </Suspense>
             </Center>
