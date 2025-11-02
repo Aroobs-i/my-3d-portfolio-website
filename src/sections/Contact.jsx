@@ -1,6 +1,10 @@
 import emailjs  from "@emailjs/browser";
-import { useState } from "react";
+import { Center, OrbitControls } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
+import { Suspense, useState } from "react";
 import { useRef } from "react"
+import CanvasLoader from "../components/CanvasLoader";
+import Telephone from "../components/Telephone";
 
 const Contact = () => {
     const formRef = useRef();
@@ -52,7 +56,7 @@ const Contact = () => {
             <div className="flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200">
             <h3 className="head-text mt-8">Let's talk</h3>
             <p className="text-lg text-white-600 mt-3">I'm currently looking for internship opportunities where I can apply my skills and continue learning.
-            Feel free to reach out—I'd love to connect!
+            Feel free to reach out. I'd love to connect!
             </p>
 
             <form ref={formRef} onSubmit={handleSubmit} className="mt-12 flex flex-col space-y-7">
@@ -98,7 +102,22 @@ const Contact = () => {
                 </button>
             </form>
             </div>
+
+        <div className="border border-black-300 bg-black-200 rounded-lg h-96 md:h-full">
+            <Canvas>
+            <ambientLight intensity={5} />
+            <directionalLight position={[5, 10, 5]} intensity={3}/> 
+            <Center> 
+            <Suspense fallback={<CanvasLoader />}>
+                  <group scale={180} position={[0, -2, 0]} rotation={[0, -0.1, 0]}>
+                    <Telephone />
+                  </group>
+            </Suspense>
+            </Center>
+            <OrbitControls maxPolarAngle={Math.PI / 2} enableZoom = {false} /> 
+            </Canvas>
         </div>
+      </div>
     </section>
   )
 }
