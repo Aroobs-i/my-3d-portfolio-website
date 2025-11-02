@@ -40,7 +40,7 @@ const CertificateCard = ({title, img, file}) => {
   return (
     <BentoTilt>
     <div className="flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200 rounded-xl 
-         transition-shadow duration-300 hover:shadow-[0_0_25px_5px_rgba(255,215,0,0.7)]">
+    transition-shadow duration-300 hover:shadow-[0_0_25px_5px_rgba(162,170,173,0.7)]">
     <div 
       className="group relative w-full h-60 bg-black border border-black-300 
       flex items-center justify-center cursor-pointer overflow-hidden"
