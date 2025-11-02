@@ -2,23 +2,14 @@ import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber';
 import { useRef } from 'react';
 
-const Telephone = ({ isTyping, isSubmitted, ...props }) => {
+const Telephone = ({ isSubmitted, ...props }) => {
   const group = useRef();
   const handsetRef = useRef();
-  const dialRef = useRef();
 
   const { nodes, materials } = useGLTF('/models/telephone.glb');
 
-  console.log(nodes);
-
-
   useFrame((state) => {
-    // Dial rotates while typing
-    if (isTyping && dialRef.current) {
-      dialRef.current.rotation.z += 0.15;
-    }
-
-    // Handset shakes after submit
+       // Handset shakes after submit
     if (isSubmitted && handsetRef.current) {
       handsetRef.current.rotation.z =
         Math.sin(state.clock.elapsedTime * 20) * 0.08;
@@ -28,15 +19,7 @@ const Telephone = ({ isTyping, isSubmitted, ...props }) => {
     if (!isSubmitted && handsetRef.current) {
       handsetRef.current.rotation.z *= 0.9;
     }
-
-    // Glow effect when typing
-    Object.values(materials).forEach((mat) => {
-      if (mat.emissive) {
-        mat.emissive.set(isTyping ? "orange" : "black");
-        mat.emissiveIntensity = isTyping ? 0.06 : 0;
-      }
-    });
-  });
+});
   
   return (
     <group  ref={group} {...props} dispose={null}>
@@ -59,19 +42,21 @@ const Telephone = ({ isTyping, isSubmitted, ...props }) => {
               />
             </group>
             <mesh
-              ref={dialRef}  // earpiece
+              ref={handsetRef}  // earpiece
               castShadow
               receiveShadow
               geometry={nodes.defaultMaterial.geometry}
               material={materials.Telephone02_Mtl}
             />
             <mesh
+              ref={handsetRef}
               castShadow
               receiveShadow
               geometry={nodes.defaultMaterial_1.geometry} //earpiece1
               material={materials.Telephone01_Mtl}
             />
             <mesh
+              ref={handsetRef}
               castShadow
               receiveShadow
               geometry={nodes.defaultMaterial_2.geometry} //handle_2
