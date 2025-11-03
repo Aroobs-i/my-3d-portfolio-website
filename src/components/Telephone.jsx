@@ -1,8 +1,10 @@
+import { useGSAP } from '@gsap/react';
 import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber';
+import gsap from 'gsap';
 import { useRef } from 'react';
 
-const Telephone = ({ isSubmitted, ...props }) => {
+const Telephone = ({ isTyping, isSubmitted, ...props }) => {
   const group = useRef();
   const handsetRef = useRef();
 
@@ -20,6 +22,25 @@ const Telephone = ({ isSubmitted, ...props }) => {
       handsetRef.current.rotation.z *= 0.9;
     }
 });
+
+useGSAP(() => {
+  if (isTyping) {
+    // Animate while typing
+    gsap.to(group.current.rotation, {
+      y: Math.PI / 2,
+      duration: 1,
+      ease: "power3.out",
+    });
+  } else {
+    // Animate back to original after typing stops
+    gsap.to(group.current.rotation, {
+      y: 0,
+      duration: 1,
+      ease: "power3.out",
+    });
+  }
+}, [isTyping]);
+
   
   return (
     <group  ref={group} {...props} dispose={null}>

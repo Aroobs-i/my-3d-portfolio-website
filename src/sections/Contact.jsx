@@ -9,6 +9,7 @@ import Telephone from "../components/Telephone";
 const Contact = () => {
     const formRef = useRef();
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const [isTyping, setIsTyping] = useState(false);
 
     const [loading, setLoading] = useState(false);
     const [form, setForm] = useState({
@@ -19,6 +20,9 @@ const Contact = () => {
 
     const handleChange = ({ target: { name,value } }) => {  
         setForm({...form, [name]: value});
+
+        setIsTyping(true);
+           setTimeout(() => setIsTyping(false), 1200);
     }
 
     const handleSubmit = async (e) => {
@@ -115,8 +119,8 @@ const Contact = () => {
             <directionalLight position={[5, 10, 5]} intensity={3}/> 
             <Center> 
             <Suspense fallback={<CanvasLoader />}>
-                  <group scale={180} position={[0, -2, 0]} rotation={[0, -0.1, 0]}>
-                    <Telephone isSubmitted={isSubmitted} />
+                  <group scale={180} position={[0, -2, 0]} rotation={[0, -0.5, 0]}>
+                    <Telephone isSubmitted={isSubmitted} isTyping={isTyping} />
                   </group>
             </Suspense>
             </Center>
