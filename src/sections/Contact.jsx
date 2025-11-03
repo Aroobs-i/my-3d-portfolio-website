@@ -5,11 +5,16 @@ import { Suspense, useState } from "react";
 import { useRef } from "react"
 import CanvasLoader from "../components/CanvasLoader";
 import Telephone from "../components/Telephone";
+import gsap from "gsap";
+import PixelHeart from "../components/PixelHeart";
 
 const Contact = () => {
     const formRef = useRef();
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isTyping, setIsTyping] = useState(false);
+
+    const [showHeart, setShowHeart] = useState(false);
+    const heartRef = useRef();
 
     const [loading, setLoading] = useState(false);
     const [form, setForm] = useState({
@@ -24,6 +29,34 @@ const Contact = () => {
         setIsTyping(true);
            setTimeout(() => setIsTyping(false), 1200);
     }
+
+    const animateHeart = () => {
+      if (!heartRef.current) return;
+    
+      const tl = gsap.timeline({
+        onComplete: () => setShowHeart(false)
+      });
+    
+      tl.fromTo(
+        heartRef.current.position,
+        { y: -4 }, // start below
+        { y: 6, duration: 2, ease: "power2.out" } // fly up
+      );
+    
+      tl.fromTo(
+        heartRef.current.rotation,
+        { x: 0, y: 0, z: 0 },
+        { x: Math.PI * 2, y: Math.PI * 4, duration: 2, ease: "power2.inOut" },
+        0
+      );
+    
+      tl.fromTo(
+        heartRef.current.scale,
+        { x: 1, y: 1, z: 1 },
+        { x: 0, y: 0, z: 0, duration: 1.5, ease: "power1.in" },
+        0.5
+      );
+    };    
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -50,9 +83,11 @@ const Contact = () => {
                 message: ''
             });
 
-            setIsSubmitted(true);
-           setTimeout(() => setIsSubmitted(false), 1200);
+            setShowHeart(true); // show heart when submitted
+            animateHeart();
 
+            setIsSubmitted(true);
+            setTimeout(() => setIsSubmitted(false), 1200);
         } catch (error) {
             setLoading(false);
             console.log(error);
@@ -122,6 +157,12 @@ const Contact = () => {
                   <group scale={180} position={[0, -2, 0]} rotation={[0, -0.5, 0]}>
                     <Telephone isSubmitted={isSubmitted} isTyping={isTyping} />
                   </group>
+
+                  {showHeart && (
+                    <group ref={heartRef} scale={1.2} position={[0, -5, 0]}>
+                      <PixelHeart />
+                    </group>
+                  )}
             </Suspense>
             </Center>
             <OrbitControls maxPolarAngle={Math.PI / 2} enableZoom = {false} /> 
