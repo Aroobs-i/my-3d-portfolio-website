@@ -7,9 +7,15 @@ import CanvasLoader from "../components/CanvasLoader";
 import Telephone from "../components/Telephone";
 import gsap from "gsap";
 import PixelHeart from "../components/PixelHeart";
+import useAlert from '../hooks/useAlert.js';
+import Alert from '../components/Alert.jsx';
+
 
 const Contact = () => {
     const formRef = useRef();
+
+    const { alert, showAlert, hideAlert } = useAlert();
+
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isTyping, setIsTyping] = useState(false);
 
@@ -58,12 +64,11 @@ const Contact = () => {
       );
     };    
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         setLoading(true);
 
-        try {
-           await emailjs.send(
+            emailjs.send(
                 'service_bm3qa5o',
                 'template_6nz442m',
                 {
@@ -74,29 +79,47 @@ const Contact = () => {
                     message: form.message
                 },
                 'MsbnhSOJwdPb02hq_',
-            );
-            setLoading(false);
-            alert('Your message has been sent :)');
-            setForm({
-                name: '',
-                email: '',
-                message: ''
-            });
+            )
+            .then(     
+              () => {
+                setLoading(false);
+                setIsSubmitted(true);
+                showAlert({
+                  show: true,
+                  text: 'Thank you for your message 😃',
+                  type: 'success',
+                });
 
-            setShowHeart(true); // show heart when submitted
-            animateHeart();
+                 setShowHeart(true); // show heart when submitted
+                 animateHeart();
 
-            setIsSubmitted(true);
-            setTimeout(() => setIsSubmitted(false), 1200);
-        } catch (error) {
-            setLoading(false);
-            console.log(error);
-            alert('Something went wrong :(')
-        }
+                 setTimeout(() => {
+                 hideAlert(false);
+                 setIsSubmitted(false);
+                 setForm({
+                   name: '',
+                   email: '',
+                   message: ''
+                 });
+                  },[3000]);
+               },
+              (error) => {
+                 setLoading(false);
+                 console.log(error);
+
+                 showAlert({
+                   show: true,
+                   text: "I didn't receive your message 😢",
+                   type: 'danger',
+                 });
+        },
+      );
     }
 
   return (
     <section className="c-space my-20" id="contact">
+            {alert.show && <Alert {...alert} />}
+
         <div className="grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full">
             <div className="flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200">
             <h3 className="head-text mt-8">Let's talk</h3>

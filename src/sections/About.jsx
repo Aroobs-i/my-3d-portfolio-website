@@ -72,11 +72,13 @@ const About = () => {
                         <p className="grid-subtext">
                             I'm based in Pakistan, and open to remote work worldwide.
                         </p>
+                        <a href="#contact" className="w-fit">
                         <Button
                           name="Contact Me"
                           isBeam 
                           containerClass="w-full mt-10"
                         />
+                        </a>
                     </div>
                 </div>
             </div>
