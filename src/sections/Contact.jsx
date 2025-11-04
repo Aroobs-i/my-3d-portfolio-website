@@ -205,7 +205,7 @@ const Contact = () => {
             <Center> 
             <Suspense fallback={<CanvasLoader />}>
                  <group>
-                  <Developer scale={3.8} position-y={-3.3}
+                  <Developer scale={3.1} position-y={-3} rotation={[0.3, 0, 0]}    //-3.3
                    animationName={animationName}
                   />
                  </group>
