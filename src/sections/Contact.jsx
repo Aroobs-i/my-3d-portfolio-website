@@ -4,17 +4,19 @@ import { Canvas } from "@react-three/fiber";
 import { Suspense, useState } from "react";
 import { useRef } from "react"
 import CanvasLoader from "../components/CanvasLoader";
-import Telephone from "../components/Telephone";
 import gsap from "gsap";
 import PixelHeart from "../components/PixelHeart";
 import useAlert from '../hooks/useAlert.js';
 import Alert from '../components/Alert.jsx';
+import Developer from "../components/Developer.jsx";
 
 
 const Contact = () => {
     const formRef = useRef();
+    const typingLock = useRef(false);
 
     const { alert, showAlert, hideAlert } = useAlert();
+    const [typingField, setTypingField] = useState("");
 
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isTyping, setIsTyping] = useState(false);
@@ -32,9 +34,18 @@ const Contact = () => {
     const handleChange = ({ target: { name,value } }) => {  
         setForm({...form, [name]: value});
 
-        setIsTyping(true);
-           setTimeout(() => setIsTyping(false), 1200);
-    }
+        setTypingField(name);
+
+        if (!typingLock.current) {
+           typingLock.current = true;
+           setIsTyping(true);
+
+           setTimeout(() => {
+             setIsTyping(false);
+             typingLock.current = false;
+    }, 1200); // wait for animation to finish
+  }       
+}
 
     const animateHeart = () => {
       if (!heartRef.current) return;
@@ -84,6 +95,8 @@ const Contact = () => {
               () => {
                 setLoading(false);
                 setIsSubmitted(true);
+                setTypingField("");
+                setIsTyping(false);
                 showAlert({
                   show: true,
                   text: 'Thank you for your message 😃',
@@ -115,6 +128,19 @@ const Contact = () => {
         },
       );
     }
+
+    const getAnim = () => {
+      if (isSubmitted) return "victory";
+    
+      if (isTyping && typingField === "name") return "clapping";
+    
+      if (isTyping && (typingField === "email" || typingField === "message"))
+        return "salute";
+    
+      return "idle";
+    };
+    
+    const animationName = getAnim();
 
   return (
     <section className="c-space my-20" id="contact">
@@ -174,13 +200,16 @@ const Contact = () => {
         <div className="border border-black-300 bg-black-200 rounded-lg h-96 md:h-full">
             <Canvas>
             <ambientLight intensity={5} />
-            <directionalLight position={[5, 10, 5]} intensity={3}/> 
+            <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
+            <directionalLight position={[10, 10, 10]} intensity={1}/> 
             <Center> 
             <Suspense fallback={<CanvasLoader />}>
-                  <group scale={180} position={[0, -2, 0]} rotation={[0, -0.5, 0]}>
-                    <Telephone isSubmitted={isSubmitted} isTyping={isTyping} />
-                  </group>
-
+                 <group>
+                  <Developer scale={3.8} position-y={-3.3}
+                   animationName={animationName}
+                  />
+                 </group>
+                 
                   {showHeart && (
                     <group ref={heartRef} scale={1.2} position={[0, -5, 0]}>
                       <PixelHeart />

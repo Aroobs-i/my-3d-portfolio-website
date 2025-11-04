@@ -38,7 +38,7 @@ const About = () => {
             <div className="col-span-1 xl:row-span-3">
                 <div className="grid-container">
                     <img src="/assets/grid27.png" alt="grid-2"
-                       className="w-full sm:w-[276px] h-fit object-contain rounded-3xl mx-6 xs:mx-0" 
+                       className="w-full sm:w-[276px] h-fit object-contain rounded-3xl sm:mx-12 mx-0 opacity-50 hover:opacity-100" 
                     />
                     <div>
                         <p className="grid-headtext mt-9">
