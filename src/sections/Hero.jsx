@@ -5,12 +5,12 @@ import { Suspense } from "react"
 import CanvasLoader from "../components/CanvasLoader"
 import { useMediaQuery } from "react-responsive"
 import { calculateSizes } from "../constants"
-import Target from "../components/Target"
 import ReactLogo from "../components/ReactLogo"
 import Cube from "../components/Cube"
 import Rings from "../components/Rings"
 import Button from "../components/Button"
 import HeroCamera from "../components/HeroCamera"
+import PixelHeart from "../components/PixelHeart"
 
 const Hero = () => {
     
@@ -43,7 +43,7 @@ const Hero = () => {
                 </HeroCamera>
 
                 <group>
-                  <Target position={sizes.targetPosition} />
+                  <PixelHeart position={sizes.targetPosition} scale={2.6}/>
                   <ReactLogo position={sizes.reactLogoPosition}/>
                   <Cube position={sizes.cubePosition}/>
                   <Rings position={sizes.ringPosition} />
